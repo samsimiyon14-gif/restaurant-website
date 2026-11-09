@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURELIA | Fine Dining</title>
+<meta name="description" content="Experience exceptional fine dining, handcrafted cuisine and unforgettable moments at AURELIA.">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #10100e;
+  color: #f5f0e5;
+  font-family: Georgia, serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 7%;
+  border-bottom: 1px solid #383329;
+  position: sticky;
+  top: 0;
+  background: #10100e;
+  z-index: 10;
+}
+
+.logo {
+  color: #d9b875;
+  font-size: 27px;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+nav a {
+  color: #f5f0e5;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 14px;
+}
+
+nav a:hover { color: #d9b875; }
+
+.hero {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  padding: 80px 9%;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.25)),
+    url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content { max-width: 650px; }
+
+.tag {
+  color: #d9b875;
+  letter-spacing: 5px;
+  font-size: 13px;
+}
+
+h1 {
+  font-size: clamp(45px, 8vw, 85px);
+  line-height: 1.08;
+  margin: 25px 0;
+}
+
+h1 span { color: #d9b875; }
+
+.hero p {
+  color: #ddd5c5;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 30px;
+  background: #d9b875;
+  color: #17140e;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.btn:hover { background: #f0d59b; }
+
+section { padding: 85px 8%; }
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title small {
+  color: #d9b875;
+  letter-spacing: 4px;
+}
+
+.section-title h2 {
+  font-size: 43px;
+  margin-top: 15px;
+}
+
+.about {
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+}
+
+.about p {
+  color: #c7c0b3;
+  line-height: 2;
+  font-size: 17px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+}
+
+.menu-card {
+  background: #1c1b17;
+  border: 1px solid #393329;
+  padding-bottom: 25px;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.menu-card h3 {
+  padding: 18px 18px 8px;
+  color: #e4c58b;
+  font-size: 22px;
+}
+
+.menu-card p {
+  padding: 0 18px;
+  color: #bcb5a9;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.price {
+  display: block;
+  padding: 15px 18px 0;
+  color: #d9b875;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.reservation {
+  background: #201e18;
+  text-align: center;
+}
+
+.reservation p {
+  color: #c7c0b3;
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 45px 20px;
+  background: #090908;
+  color: #aaa08f;
+  line-height: 2;
+}
+
+footer strong { color: #d9b875; }
+
+@media(max-width:700px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  nav a { margin: 0; font-size: 12px; }
+
+  .hero { min-height: 550px; }
+
+  .menu-grid { grid-template-columns: 1fr; }
+
+  .gallery { grid-template-columns: 1fr 1fr; }
+
+  .section-title h2 { font-size: 34px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AURELIA</div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#menu">MENU</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">THE ART OF FINE DINING</div>
+    <h1>Where Taste Meets <span>Elegance.</span></h1>
+    <p>
+      Discover exceptional flavours, handcrafted dishes
+      and unforgettable dining experiences.
+      Welcome to a world of timeless luxury.
+    </p>
+    <a href="#menu" class="btn">EXPLORE OUR MENU</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <div class="section-title">
+      <small>OUR STORY</small>
+      <h2>A Taste of Excellence</h2>
+    </div>
+    <p>
+      At AURELIA, every dish tells a story.
+      Our passion for exceptional ingredients,
+      artistic presentation and warm hospitality
+      creates an experience beyond ordinary dining.
+      Come for the food. Stay for the memories.
+    </p>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="section-title">
+    <small>DISCOVER</small>
+    <h2>Our Signature Menu</h2>
+  </div>
+
+  <div class="menu-grid">
+
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700" alt="Fresh salad">
+      <h3>Garden Fresh Salad</h3>
+      <p>Fresh seasonal ingredients with a signature dressing.</p>
+      <span class="price">₹299</span>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=700" alt="Grilled steak">
+      <h3>Royal Grilled Special</h3>
+      <p>Perfectly grilled and served with chef's special sauce.</p>
+      <span class="price">₹599</span>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=700" alt="Pasta">
+      <h3>Italian Signature Pasta</h3>
+      <p>Authentic Italian flavours with creamy perfection.</p>
+      <span class="price">₹399</span>
+    </div>
+
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-title">
+    <small>VISUAL EXPERIENCE</small>
+    <h2>Our Gallery</h2>
+  </div>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700" alt="Restaurant interior">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700" alt="Fine dining food">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700" alt="Elegant dining">
+  </div>
+</section>
+
+<section class="reservation">
+  <div class="section-title">
+    <small>YOUR TABLE AWAITS</small>
+    <h2>Make It a Memorable Evening</h2>
+  </div>
+  <p>Contact us today to reserve your dining experience.</p>
+  <a class="btn" href="https://wa.me/919876543210">
+    RESERVE YOUR TABLE
+  </a>
+</section>
+
+</main>
+
+<footer id="contact">
+  <strong>AURELIA – FINE DINING</strong>
+  <p>Experience the extraordinary.</p>
+  <p>Dharmapuri, Tamil Nadu, India</p>
+  <p>Phone: +91 98765 43210</p>
+  <p>© 2026 AURELIA. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
